@@ -1,0 +1,63 @@
+#include<iostream>
+#include<math.h>
+#include<windows.h>
+#include<conio.h>
+using namespace std;
+main(){
+	int op=0,n=0,n2=0,i=0;
+	do{
+	cout << "         MENU\n";
+	cout << "\n1.-Dentro del rango [-10,10] Imprimir el numero y su cubo si es Impar y el cuadrado si es par\n";
+	cout << "\n2.-Dentro del rango [X , X] Imprimir todos los numeros pares dentro del rango\n\n3.-Salir\n\n";
+	cin >> op;
+	system("cls");
+	switch(op){
+	case 1:
+		do{
+		cout << "Ingrese un numero\n";
+		cin >> n;
+		if(n>-10 && n<10){
+			cout << "El numero esta dentro del rango";
+			system("cls");
+			if (n%2==0){
+				cout << n << " es un numero par y se eleva al cuadrado " << pow(n,2);
+			}
+			if (n%2==1){
+				cout << n << " es un numero impar y se eleva al cubo " << pow(n,3);
+			}
+			getch();
+		} else{
+			cout << "Numero fuera de rango";
+			getch();
+		}
+		system ("cls");
+		cout << "1.-Repetir el proceso\n2.-Regresar al menu\n3.-Salir\n";
+		cin >> op;
+		system ("cls");
+	} while (op!=2);
+	break;
+	case 2:
+		do{
+		cout << "Ingrese el primer numero\n";
+		cin >> n;
+		cout << "Ingrese el segudno numero\n";
+		cin >> n2;
+		cout << "Numeros pares dentro del rango " << "[" << n << "," << n2 << "]\n";
+		for (i=n ; i<=n2 ; i=i+1){
+			if (i%2==0){
+				cout << i << "\n";
+			}
+		}
+		system ("cls");
+		cout << "1.- Repetir el proceso\n2.-Regresar al menu\n3.-Salir\n";
+		cin >> op;
+		system ("cls");
+	} while (op!=2);
+	break;
+	
+}
+    }while(op!=3);
+cout << "Cerrando sistema";
+	return 0;          	
+} 
+	
