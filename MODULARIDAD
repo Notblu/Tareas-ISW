@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int menu();
+void cuasipar(int );
+void cuentacuasipar(int );
+
+int main(){
+	int op,n;
+	do{
+		op=menu(); system("cls");
+		switch(op){
+			case 1:
+				cuasipar(n); 
+			break;
+			case 2:
+				cuentacuasipar(n);
+			break;
+		}
+		system("cls");
+	}while (op!=3);
+	system("cls");
+	printf("\n\n\n\n\t\tCERRANDO SISTEMA.\n\n\n\n\t\t");
+	return 0;
+}
+
+int menu(){
+	int op;
+	printf("\t\tMenu\n\n1.Calcular si un numero es CUASI-PAR\n\n2.Numeros CUASI-PARES\n\n3.SALIR\n\nOPCION: \t"); scanf("%d",&op);
+	return op;
+}
+
+void cuasipar (int n){
+	int op;
+	do{
+	int val=0,i,val2=0,cont=0,suma=0,val3;
+	do{printf("Digite un numero natural: \t"); scanf("%d",&n);system("cls");}while(!(n>=1));
+	for (i=1 ; i<=n ; i++){
+		val=n/i;
+		val2=n%i;
+		if(val!=0 & val2==0){
+			cont=cont+i;
+			printf("%d es divisor\n\n",i); 
+		}
+	}
+		suma=cont;
+		val3=suma%2;;
+		if (val!=0 & val2==0 & val3==0){
+			printf("\nLa suma de los divisores es %d, por lo tanto %d es cuasipar.\n",suma,n);
+			system("pause");
+			system("cls");
+		} else {
+			if (val!=0 & val2==0 & val3==1) {
+				printf("\nLa suma de los divisores es %d, por lo tanto %d NO es cuasipar.\n\n",suma,n);
+				system("pause");
+				system("cls");
+			}
+		}
+		printf("Teclea la opcion a realizar\n\n1.Repetir proceso\n2.Regresar al Menu\n\n\t");scanf("%d",&op); system("cls");
+	}while(op!=2);
+	}
+	
+	void cuentacuasipar(int n){
+		int op;
+	do{
+		int i=0,cont=0,suma=0,val=0,val2=0,val3=0,m=0,x=0;
+		do{printf("Los primeros X numeros cusipares: \t"); scanf("%d",&n);system("cls");}while(!(n>=1));
+		do{
+			cont=0;
+			suma=0;
+			m++;
+		for (i=1 ; i<=m ; i++){
+		val=m/i;
+		val2=m%i;
+		if(val!=0 & val2==0){
+			cont=cont+i;
+		}
+	    }
+		suma=cont;
+		val3=suma%2;;
+		if (val!=0 & val2==0 & val3==0){
+		x=x+1;
+			printf("\nNumeros cuasipares(%d/%d)\n%d\n",x,n,m); 
+			system("pause");
+			system("cls");
+		} 
+		}while(x!=n);
+		printf("\nTeclea la opcion a realizar\n\n1.Repetir proceso\n2.Regresar al Menu\n\n\t");scanf("%d",&op); 
+	}while(op!=2);
+	}
